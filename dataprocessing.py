@@ -69,7 +69,8 @@ insert_point = 0
 print "STARTING PROCESSING IN BATCHES OF %i" %batch_size
 
 for i in tqdm(range(num_iter)):
-    sys.stdout.flush()
+    sys.stdout.flush()      ##每隔一秒输出一个数字，但是如果把这句话sys.stdout.flush()注释的话，你就只能等到程序执行完毕，屏幕上会一次性输出0，1，2，3，4。
+##如果你加上sys.stdout.flush()，刷新stdout，这样就能每隔一秒输出一个数字了。
 
     X_in  = []
     X_ta = []
