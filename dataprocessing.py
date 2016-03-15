@@ -24,11 +24,11 @@ def process_image(im):
     if im.mode != "RGB":
         im = im.convert("RGB")
     new_size = [int(i/1.3) for i in im.size]
-    im.thumbnail(new_size, Image.ANTIALIAS)
+    im.thumbnail(new_size, Image.ANTIALIAS)      ##图像缩略图
     target = np.array(im)[3:-3,4:-4,:]
-    im = Image.fromarray(target)
+    im = Image.fromarray(target)                ##变换的相反操作
     new_size = [i/4 for i in im.size]
-    im.thumbnail(new_size, Image.ANTIALIAS)
+    im.thumbnail(new_size, Image.ANTIALIAS)     ##图像缩略图
     input = np.array(im)
     return input, target
 
